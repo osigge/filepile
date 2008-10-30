@@ -8,14 +8,14 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
-    @user.register! if @user && @user.valid?
+    @user.save if @user and @user.valid?
     success = @user and @user.valid?
     if success and @user.errors.empty?
       redirect_back_or_default root_path
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      flash[:notice] = "Der Benutzer wurde angelegt und die Zugangsdaten per E-Mail an #{@user.email} versendet."
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
-      render :action => 'new'
+      flash[:error]  = 'Fehler beim Anlegen des Benutzers'
+      render :action => :new
     end
   end
 end

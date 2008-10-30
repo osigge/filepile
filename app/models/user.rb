@@ -7,11 +7,10 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
-  validates_presence_of       :login
   validates_presence_of       :email
     
   validates_uniqueness_of     :email,
-                              :unless   => Proc.new {|obj| obj.errors.invalid?(:email)},
+                              :unless   => Proc.new {|obj| obj.errors.invalid?(:email)}
                               
   validates_length_of         :email,    
                               :within    => 6..100,
@@ -36,16 +35,12 @@ class User < ActiveRecord::Base
   validates_confirmation_of   :password,
                               :unless  => Proc.new {|obj| obj.errors.invalid?(:password) or obj.password.blank?}
 
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation
 
-  def self.authenticate(login, password)
-    return nil if login.blank? or password.blank?
-    user = User.find(:first, :conditions => {:login => login})
-    user and uuser.authenticated?(password) ? uuser : nil
-  end
-
-  def login=(value)
-    write_attribute :login, (value ? value.downcase : nil)
+  def self.authenticate(email, password)
+    return nil if email.blank? or password.blank?
+    user = User.find(:first, :conditions => {:email => email})
+    user and user.authenticated?(password) ? user : nil
   end
 
   def email=(value)

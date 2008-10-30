@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>FilePile</title>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
+		<%= tag :link, :rel => 'shortcut icon', :href => '/favicon.ico' %>	
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">       
+        Header
+      </div>    
+          
+      <ul id="navigation">  
+        <%= debug flash %>   
+        Navi
+      </ul>  
+                                                                                                                       
+      <div id="main">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        Footer
+      </div>
+    </div>
+  </body>
+</html>

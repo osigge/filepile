@@ -5,6 +5,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
   config.frameworks -= [:active_resource]
+  
+  config.active_record.observers = :user_observer 
 
   config.time_zone = 'Berlin'
 

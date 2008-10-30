@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     logout_keeping_session!
-    user = User.authenticate(params[:login], params[:password])
+    user = User.authenticate(params[:email], params[:password])
     if user
       reset_session
       self.current_user = user
@@ -14,23 +14,15 @@ class SessionsController < ApplicationController
       redirect_back_or_default root_path
       flash[:notice] = "Logged in successfully"
     else
-      note_failed_signin
-      @login       = params[:login]
+      @email       = params[:email]
       @remember_me = params[:remember_me]
-      render :action => 'new'
+      render :action => :new
     end
   end
 
   def destroy
     logout_killing_session!
-    flash[:notice] = "You have been logged out."
+    flash[:notice] = 'Auf Wiedersehen, sie sind nun ausgeloggt.'
     redirect_back_or_default root_path
-  end
-
-protected
-  # Track failed login attempts
-  def note_failed_signin
-    flash[:error] = "Couldn't log you in as '#{params[:login]}'"
-    logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
 end

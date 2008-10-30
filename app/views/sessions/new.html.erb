@@ -1,16 +1,14 @@
-<h1>Log In</h1>
+<% form_tag session_path do %>    
+  <%= hidden_field_tag :request_uri, request.request_uri %> 
+  
+  <%= label_tag :email, 'E-Mail-Adresse: *' %>
+  <%= text_field_tag :email, @email %>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+  <%= label_tag :password, 'Passwort: *' %>
+  <%= password_field_tag :password %>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+  <%= label_tag :remember_me, 'Eingeloggt bleiben?' %>
+  <%= check_box_tag :remember_me, @remember_me %>
 
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
-
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>
+  <p><%= submit_tag 'Anmelden' %></p>
+<% end %>
