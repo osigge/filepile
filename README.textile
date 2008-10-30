@@ -1,0 +1,6 @@
+h1. Security
+
+* Edit REST_AUTH_SITE_KEY in config/initializers/site_keys.rb
+* Edit session secret in config/environment.rb
+
+(Is done automatically in the future, maybe)
