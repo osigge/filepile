@@ -1,14 +1,20 @@
-<% form_tag session_path do %>    
+<% form_tag session_path do %>  
+  
   <%= hidden_field_tag :request_uri, request.request_uri %> 
   
-  <%= label_tag :email, 'E-Mail-Adresse: *' %>
-  <%= text_field_tag :email, @email %>
+  <fieldset>
+    <legend>Anmeldung</legend> 
+    <%= label_tag :email, 'E-Mail-Adresse: *' %>
+    <%= text_field_tag :email, @email %>
+    
+    <%= label_tag :password, 'Passwort: *' %>
+    <%= password_field_tag :password %><br />       
 
-  <%= label_tag :password, 'Passwort: *' %>
-  <%= password_field_tag :password %>
+    <%= submit_tag 'Anmelden' %>
+    <%= check_box_tag :remember_me, 1, @remember_me %>
+    <%= label_tag :remember_me, 'Eingeloggt bleiben?', :class => 'check_box' %> 
+ 
+  </fieldset>    
+<% end %>    
 
-  <%= label_tag :remember_me, 'Eingeloggt bleiben?' %>
-  <%= check_box_tag :remember_me, @remember_me %>
-
-  <p><%= submit_tag 'Anmelden' %></p>
-<% end %>
+<p class="info">* Pflichtfeld</p>

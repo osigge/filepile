@@ -1,0 +1,392 @@
+body
+{
+	margin: 					0px;
+	padding: 					0px;
+	font: 						normal 11px/1.7em 'Lucida Grande', Lucida, Verdana, sans-serif;
+	background:				#101010;
+	text-shadow:			0 0 0 #FFFFFF;
+	color:						#E0E0E0;
+}
+
+/* Skeleton */
+
+#page
+{
+	position: 				relative;
+	width: 						1016px;
+	min-height:				400px;
+	margin: 					0px auto 0px auto;
+	padding:					0px;
+	overflow:					hidden;
+}
+
+#header
+{
+  position:         relative;
+	display: 					block;
+	width: 						1016px;
+	height:						60px;
+	border-bottom:		0px;
+	z-index:          5;      
+	background:       #151515;
+}
+
+#navigation
+{
+  position:         relative;
+  list-style:       none;
+  margin:           0px;
+  padding:          0px;
+  height:           30px;
+  z-index:          4;
+  background:       #202020;
+}
+
+#navigation li
+{
+  display:          block;
+  padding:          0px 8px 0px 12px;
+	margin-right:		  5px;
+}
+
+#navigation li.active,
+#navigation li:hover
+{
+	text-decoration:  none;
+	background:       #2B2B2B;
+}
+
+#navigation li,
+#navigation li a,
+#navigation li a:link,
+#navigation li a:visited
+{
+  line-height:      30px;
+  float:            left;
+	color:						white;
+	text-decoration:  none;
+}
+
+#main
+{
+	clear:						both;
+	padding:					15px 10px 10px 10px;
+	margin:						0px 0px 5px 0px;
+	overflow:					hidden;
+	background-color:	#2B2B2B;
+}
+
+#footer
+{
+	display: 					block;
+	width: 						1016px;
+	height:						30px;
+	padding:          0px;
+	border-bottom:		0px;
+}
+
+/* Lists */
+
+.even
+{
+  background:             #282828;
+}
+
+.odd
+{
+  background:             #323232;
+}
+
+/* Typo */
+
+a, 
+a:link,
+a:visited
+{
+	font: 						      normal 11px/1.7em 'Lucida Grande', Lucida, Verdana, sans-serif;
+	color:						      #FFFFFF;
+	text-decoration:        none;
+}
+
+a:hover,
+a:active
+{
+	text-decoration:	      underline;
+}
+
+#footer,
+#footer a
+{
+  color:                  #333333;
+  line-height:            30px;
+}
+
+#footer
+{
+  color:                  #151515;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+	color:						#FFFFFF;
+	font-weight:			bold;
+	margin:						0 0 0.15em;
+}
+
+h1 
+{
+	font-size:				1.2em;
+}
+
+h2
+{
+	font-size:				1.1em;
+}
+
+h3
+{
+	font-size:				1.0em;
+}
+
+h4
+{
+	font-size:				0.9em;	
+}
+
+span,
+p
+{
+	line-height:			1.7em;
+}
+
+a > img
+{
+	border:						0px;
+}
+
+a > h1,
+a > h2,
+a > h3,
+a > h4
+{
+  cursor:           default;
+}
+
+.info,
+.info a
+{
+	font-size:        9px;
+}
+
+.small,
+.small a
+{
+  font:             normal 9px 'Lucida Grande', sans-serif;
+}
+
+.pagination,
+.pagination a
+{
+	font-size:        10px;
+}
+
+.pagination span.current
+{
+  font-size:        11px;
+}
+
+.pagination span.disabled
+{
+	color:						#323232;
+}
+
+legend
+{
+	font:							normal 12px;
+	color:						#FFFFFF;
+}
+
+label
+{
+	font:							normal 11px;
+	color:						#FFFFFF;
+	display:          block;
+}    
+
+label.check_box
+{
+  display:          inline;
+}
+
+fieldset
+{
+	border:						1px solid #303030;
+	margin:						2px 0px 8px 0px;
+}
+
+.error
+{
+	font-weight:			bold;
+	color:						#9F0000;
+}
+
+h2.notice,
+h2.warn,
+h2.error
+{
+	margin:						0px 0px 5px 0px;
+	padding:					5px 5px 5px 4px;
+	color: 						#FFFFFF;
+	border-width:			1px;
+	border-style:     solid;
+	text-align:       center;
+}
+
+h2.notice
+{
+	background-color:	#346633;
+	border-color:	    #0FB920;
+}
+
+h2.warn
+{
+	background-color:	#D74900;
+	border-color:	    #DF7518;
+}
+
+h2.error
+{
+	background-color:	#9F0000;
+	border-color:	    red;
+}
+
+span.notice
+{
+  color:            #346633;
+}
+
+span.warn
+{
+  color:            #D74900;
+}
+
+span.error
+{
+  color:            #9F0000;
+}
+
+sup,
+sub
+{
+  font-size:        8px;
+  color:            #959595;
+}
+
+
+/* Forms */
+
+form input,
+form span,
+form label
+{
+  vertical-align:   middle;
+}
+
+input[type=text],
+input[type=password],
+textarea
+{
+	border:						1px solid #303030;
+	padding:					3px;
+	margin:						1px 0px 5px 0px;
+	font: 						normal 11px/1.7em 'Lucida Grande', Lucida, Verdana, sans-serif;
+	color:						#202020;
+}
+
+input[type=text],
+input[type=password]
+{
+	width:						200px;
+}
+
+textarea
+{
+	width:						90%;
+	height:						200px;
+}
+
+select,
+optgroup,
+option
+{
+  font: 						normal 11px/1.7em 'Lucida Grande', Lucida, Verdana, sans-serif;
+	color:						#202020;
+}
+
+optgroup
+{
+  font: 						bold 11px/1.7em 'Lucida Grande', Lucida, Verdana, sans-serif;
+  margin:           0px 0px 3px 0px;
+}
+
+optgroup > option
+{
+  padding:          0px 0px 0px 8px;
+}
+
+div.fieldWithErrors input,
+input[type=text].error,
+input[type=password].error,
+textarea.error
+{
+	border:						1px dashed #9F0000;
+}
+
+div.fieldWithErrors,
+div.formError
+{
+	font: 						italic 11px/1.7em 'Lucida Grande', Lucida, Verdana, sans-serif;
+	margin:						0px;
+}
+
+.inline div.fieldWithErrors
+{
+  display:          inline;
+}
+
+.middle *
+{
+  vertical-align:   middle;
+}
+
+div.fieldWithErrors label
+{
+  color:            #9F0000;
+}
+
+input[type=button].conspicuous_button
+{
+  background:       red;
+}
+
+/* Symbols & Co. */
+
+hr
+{
+	border:						0px;
+	height:						1px;
+	background-color:	#303030;
+}
+
+.draggable
+{
+  cursor:         	-moz-grab;
+}
+
+selector:focus
+{
+	outline: 					none;
+}

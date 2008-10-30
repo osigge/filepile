@@ -1,6 +1,6 @@
 require 'digest/sha1'
 
-# TODO: Localization
+# TODO: Localization, Cleanup authentication mess
 
 class User < ActiveRecord::Base
   include Authentication

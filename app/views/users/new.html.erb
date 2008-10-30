@@ -1,15 +1,20 @@
-<%= error_messages_for :user %>     
-
 <% form_for @user do |f| %>
+  <fieldset>
+    <legend>Registrierung</legend>
+    <%= label_tag :email, 'E-Mail-Adresse: *' %>
+    <%= f.text_field :email %>
+    <%= f.error_message_on :email %>
+    
+    <%= label_tag :password, 'Passwort: *' %>
+    <%= f.password_field :password %>     
+    <%= f.error_message_on :password %>   
+    
+    <%= label_tag :password_confirmation, 'Passwort (Wiederholung): *' %>
+    <%= f.password_field :password_confirmation %> 
+    <%= f.error_message_on :password_confirmation %><br />   
+    
+    <%= submit_tag 'Benutzer anlegen' %>  
+  </fieldset>
+<% end %>      
 
-  <%= label_tag :email %>
-  <%= f.text_field :email %>
-  
-  <%= label_tag :password %>
-  <%= f.password_field :password %>
-  
-  <%= label_tag :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  
-  <%= submit_tag 'Benutzer anlegen' %>
-<% end %>
+<p class="info">* Pflichtfeld</p>

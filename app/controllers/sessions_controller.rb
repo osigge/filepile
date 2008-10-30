@@ -9,20 +9,21 @@ class SessionsController < ApplicationController
     if user
       reset_session
       self.current_user = user
-      new_cookie_flag = (params[:remember_me] == "1")
+      new_cookie_flag = (params[:remember_me] == '1')
       handle_remember_cookie! new_cookie_flag
       redirect_back_or_default root_path
-      flash[:notice] = "Logged in successfully"
+      flash[:notice] = 'Anmeldung erfolgreich'
     else
       @email       = params[:email]
-      @remember_me = params[:remember_me]
+      @remember_me = params[:remember_me]   
+      flash[:error] = 'Anmeldung fehlgeschlagen'
       render :action => :new
     end
   end
 
   def destroy
     logout_killing_session!
-    flash[:notice] = 'Auf Wiedersehen, sie sind nun ausgeloggt.'
+    flash[:notice] = 'Auf Wiedersehen, sie sind nun ausgeloggt'
     redirect_back_or_default root_path
   end
 end

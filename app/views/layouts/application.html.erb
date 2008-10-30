@@ -2,26 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>FilePile</title>
-    <%= stylesheet_link_tag 'application', :media => 'all' %>
+    <%= title_tag %>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>     
+    <%= javascript_include_tag :defaults %>
 		<%= tag :link, :rel => 'shortcut icon', :href => '/favicon.ico' %>	
   </head>
   <body>
     <div id="page">
       <div id="header">       
-        Header
+        Header, Logo. Wenn eingeloggt als Admin, hier Systeminfos (freier Platz usw.) einblenden.
+        Projekt-Selektions-Box
       </div>    
           
       <ul id="navigation">  
-        <%= debug flash %>   
-        Navi
+        <%= content_tag :li, link_to_unless_current('Login', login_path), :class => current_page?(login_path) ? 'active' : nil unless logged_in? %>     
+        <%= content_tag :li, link_to_unless_current('Logout', logout_path), :class => current_page?(logout_path) ? 'active' : nil if logged_in? %> 
+        <%= content_tag :li, link_to_unless_current('Neuer Benutzer', new_user_path), :class => current_page?(new_user_path) ? 'active' : nil %> 
       </ul>  
                                                                                                                        
       <div id="main">
         <%= yield %>
       </div>
       <div id="footer">
-        Footer
+        <%= callback %> 
       </div>
     </div>
   </body>
